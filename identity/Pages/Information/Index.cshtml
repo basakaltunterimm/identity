@@ -1,0 +1,53 @@
+﻿@page
+@model identity.Pages.Information.IndexModel
+@{
+}
+<br >
+
+<h2>Kimlik Bilgilerinizi Giriniz.</h2>
+<a class="btn btn-primary btn-sm" href="/Information/Create">New İnformation</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>SIRA</th>
+            <th>TC KİMLİK NUMARASI</th>
+            <th>İSİM</th>
+            <th>SOYİSİM</th>
+            <th>CİNSİYET</th>
+            <th>DOĞUM TARİHİ</th>
+            <th>DOĞUM YERİ</th>
+            <th>ANNE ADI</th>
+            <th>BABA ADI</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model.ListClient)
+        {
+            <tr>
+                <td>@item.id</td>
+                <td>@item.tc_id</td>
+                <td>@item.name</td>
+                <td>@item.surname</td>
+                <td>@item.gender</td>
+                <td>@item.birth_date</td>
+                <td>@item.birth_place</td>
+                <td>@item.mother_name</td>
+                <td>@item.father_name</td>
+                <td>
+                    <a class="btn btn-primary btn-sm" href="/Information/Edit?id=">Düzenle</a>
+                    <a class="btn btn-primary btn-sm" href="/Information/Delete?id=">Bilgileri sil</a>
+                </td>
+
+
+
+            </tr>
+        }
+
+    </tbody>
+
+
+
+   
+</table>

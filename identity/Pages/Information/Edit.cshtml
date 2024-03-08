@@ -1,0 +1,83 @@
+﻿@page
+@model identity.Pages.Information.EditModel
+@{
+}
+<br />
+<h2>BİLGİYİ DEĞİŞTİR</h2>
+@if (Model.errorMessage.Length > 0)
+{
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>@Model.errorMessage</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+<form method="POST">
+    <input type="hidden" name="id" value="@Model.clientInfo.id" />
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label-label">TC KİMLİK NUMARASI</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="tc_id" value="@Model.clientInfo.tc_id" />
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label-label">İSİM</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="name" value="@Model.clientInfo.name" />
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label-label">SOYİSİM</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="surname" value="@Model.clientInfo.surname" />
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label-label">CİNSİYET</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="gender" value="@Model.clientInfo.gender" />
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label-label">DOĞUM GÜNÜ</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="birth_date" value="@Model.clientInfo.birth_date" />
+
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label-label">DOĞUM YERİ</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="birth_place" value="@Model.clientInfo.birth_place" />
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label-label">ANNE ADI</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="mother_name" value="@Model.clientInfo.mother_name" />
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label-label">BABA ADI</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="father_name" value="@Model.clientInfo.father_name" />
+        </div>
+    </div>
+
+
+
+    <div class="row mb-3">
+        <div class="offset-sm-3 col-sm-3 d-grid">
+            <button type="submit" class="btn btn-primary">KAYDET</button>
+        </div>
+        <div class="col-sm-3 d-grid">
+            <a class="btn btn-outline-primary" href="/" role="button">ÇIK</a>
+        </div>
+    </div>
+</form>
